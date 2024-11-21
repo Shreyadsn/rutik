@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Surprise</title>
+    <style>
+        /* General body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #222;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Container for the romantic elements */
+         /* Rose Petal Animation */
+         @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .rose-petal {
+            position: absolute;
+            top: -50px;
+            width: 20px;
+            height: 20px;
+            background: url('rose-petal.png') no-repeat center center;
+            background-size: contain;
+            animation: fall 5s linear infinite;
+        }
+
+        .rose-petal:nth-child(odd) {
+            animation-duration: 4s;
+            left: calc(100% * (random() - 0.5)); /* Random position left */
+        }
+
+        .rose-petal:nth-child(even) {
+            animation-duration: 6s;
+            left: calc(100% * (random() - 0.5)); /* Random position left */
+        }
+
+        /* Container for the romantic elements */
+        .container {
+            text-align: center;
+        }
+
+        /* Square box for the boyfriend's image */
+        .image-box {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image fills the box nicely */
+        }
+
+        /* Button styles */
+        .click-here {
+            font-size: 24px;
+            padding: 12px 30px;
+            background-color: rgba(255, 0, 102, 0.7);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            animation: fadeInButton 2s ease;
+        }
+
+        /* Message that appears after clicking */
+        #message {
+            display: none;
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(233, 133, 185, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 60%;
+            transform: translateX(-50%);
+            left: 50%;
+            width: 60%;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInButton {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Square box for boyfriend's image -->
+        <div class="image-box">
+            <img src="C:\Users\shrey\OneDrive\Pictures\Saved Pictures\khaduss.jpg" alt="Boyfriend's Image"> <!-- Replace with your image file name -->
+        </div>
+
+        <!-- Button to trigger romantic message -->
+        <button class="click-here" onclick="showMessage()">Khadusss,Clicke Here</button>
+
+        <!-- Hidden message that appears when button is clicked -->
+        <div id="message">
+            "Hey Love!You are my favorite person to be with, whether it's a quiet day at home or when we're out together. But there’s something about the way you drive — that makes my heart race in the most beautiful way. I know you’re not the romantic type,and i always wanted a romantic partner in my life but now i have started falling more deep and deep for you I LOVE YOU KHADUSSS. It makes me feel even more special, knowing that you show your love in your own way.I can’t help but dream of a future where we share more of those little moments, where love isn’t just something said, but something we both feel in every action, every step. I want us to keep moving forward, side by side, making memories, and building something that will last forever. Will you be by my side, love me, and care for me for the rest of our lives?"
+        </div>
+    </div>
+
+    <script>
+        // Function to display the romantic message
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
